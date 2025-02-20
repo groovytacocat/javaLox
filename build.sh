@@ -2,6 +2,6 @@
 
 echo -e "Compiling project...\n"
 
-javac --source-path com -d bin com/lox/*.java
+javac --source-path com -d out com/lox/*.java
 
 echo "Compilation complete!"
