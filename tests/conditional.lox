@@ -1,0 +1,17 @@
+//Description: Simple display of if/else functionality
+var name = "Adam Hooven";
+var age = 29;
+
+if(name != ""){
+	print "My name is: " + name;
+
+	if(age >= 18){
+		print name + " is old enough to vote";
+	}
+	else{
+		print name + " is not old enough to vote"; // Should never reach here
+	}
+}
+else{
+	print "The name variable was empty"; // Should also never reach here
+}

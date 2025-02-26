@@ -1,0 +1,17 @@
+//Description: Showing failure to interpret due to unterminated block comment error
+var a = 3;
+var b = 5;
+
+/*
+
+
+
+
+
+
+
+/*  nested */
+
+/
+
+var c = 3;

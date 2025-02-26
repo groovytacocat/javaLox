@@ -1,0 +1,26 @@
+//Description: Bad FizzBuzz that makes use of for & while loops and conditional branching
+for(var i = 1; i <= 50; i = i + 1){
+	var remThree = i;
+	var remFive = i;
+	
+	while(remThree >= 3){
+		remThree = remThree - 3;
+	}
+	
+	while(remFive >= 5){
+		remFive = remFive - 5;
+	}
+
+	if(remThree == 0 and remFive == 0){
+		print "FizzBuzz";
+	}
+	else if(remFive == 0){
+		print "Buzz";
+	}
+	else if(remThree == 0){
+		print "Fizz";
+	}
+	else{
+		print i;
+	}
+}

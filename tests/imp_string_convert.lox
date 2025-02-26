@@ -1,0 +1,5 @@
+//Description: Show implicit string conversion functionality when '+' operator used to add string to non-string
+var str = "scone";
+var num = 4;
+
+print str + num;

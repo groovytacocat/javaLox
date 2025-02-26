@@ -46,7 +46,7 @@ run: $(JAR_FILE)
 
 # Clean up compiled files and JAR file
 clean:
-	rm -rf $(OUT_DIR) $(JAR_FILE) boiler/
+	rm -rf $(OUT_DIR) $(JAR_FILE) boiler/ results.txt
 
 # .PHONY target for clean and run
 .PHONY: clean run

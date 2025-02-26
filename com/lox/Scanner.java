@@ -73,7 +73,12 @@ public class Scanner {
         if (match('/')) {
           // consume until end of line (or file)
           while (peek() != '\n' && !isAtEnd()) advance();
-        } else {
+        }
+        //Adding Block Comment support
+        else if(match('*')){
+          blocks();
+        }
+        else {
           addToken(SLASH);
         }
       }
@@ -89,6 +94,35 @@ public class Scanner {
         } else {
           Lox.error(line, "Unexpected character.");
         }
+      }
+    }
+  }
+
+  /*
+   Block Comment with nesting support - Originally had 2 while loops (1 for nesting 1 for consuming symbols seemed bad looked at other implementations to see if better way)
+   Iterate through source and consume symbols
+   Check for nested and increment if detected, if ended decrement nesting
+   If newline increment
+   Report errors for unterminated blocks if no terminator found and end of file reached
+   */
+  private void blocks(){
+    int level = 1;
+
+    while(level > 0){
+      char cur = advance();
+
+      if(cur == '/' && peek() == '*'){
+        level++;
+        advance();
+      }
+      else if(cur == '*' && peek() == '/'){
+        level--;
+        advance();
+      }
+      else if(cur == '\n') line++;
+      if(isAtEnd()){
+        Lox.error(line, "Block Comment not terminated.");
+        return;
       }
     }
   }

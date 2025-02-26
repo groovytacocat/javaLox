@@ -1,0 +1,9 @@
+//Description: For Loop that prints Fibonacci numbers from 1 to 10,000
+var a = 0;
+var temp;
+
+for (var b = 1; a < 10000; b = temp + b) {
+	print a;
+	temp = a;
+	a = b;
+}

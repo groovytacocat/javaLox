@@ -1,0 +1,23 @@
+// Description: Showing support for C-Style Block Comments
+var a = 0;
+var temp;
+
+/* Test comment block
+line 2 comment block
+line 3
+*/
+
+for (var b = 1; a < 10000; b = temp + b) {
+	print a;
+	temp = a;
+	a = b;
+}
+
+
+/*
+
+
+/* adfasdfa */
+
+
+*/
